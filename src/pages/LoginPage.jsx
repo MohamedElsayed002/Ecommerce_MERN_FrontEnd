@@ -73,8 +73,8 @@ const LoginPage = () => {
                         <p className='mt-4'>doesn't have account? <Link className="underline text-blue-600" to="/register">register</Link></p>
                     </div>
                     <div>
-                        <button onClick={() => HandleAdminSubmit()} className="btn btn-accent w-full mt-4">Login as Admin</button>
-                        <p className="text-sm">option feature</p>
+                        <button onClick={() => HandleAdminSubmit()} className="btn btn-accent w-full mt-4">Login as testUser</button>
+                        <p className="text-sm">optional feature</p>
                     </div>
                 </form>
             </div>
