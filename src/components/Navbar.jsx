@@ -17,7 +17,7 @@ const Navbar = () => {
     const navigate = useNavigate()
     const isAboveMediumScreens = useMediaQuery("(min-width : 980px)")
     const [toggled, setToggled] = useState(false)
-    const [theme, setTheme] = useState(themes.winter)
+    const [theme, setTheme] = useState(themes.dracula)
 
     const handleTheme = () => {
         const { winter, dracula } = themes
