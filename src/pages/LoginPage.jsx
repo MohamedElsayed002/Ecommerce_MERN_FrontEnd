@@ -17,7 +17,7 @@ const LoginPage = () => {
     }   
 
     const HandleAdminSubmit = () => {
-        LoginUser({email : 'mohamedelsayed20258@gmail.com',password : '01093588197Mm'})
+        LoginUser({email : 'optional@gmail.com',password : '123456Mm'})
     }
 
     if(loggedIn) {
