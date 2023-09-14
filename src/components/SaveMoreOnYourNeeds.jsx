@@ -25,7 +25,6 @@ const SaveMoreOnYourNeeds = () => {
     if(!deals) {
         return <h1>Loading..</h1>
     }
-    console.log('price',deals)
 
     return (
         <div className="w-4/5 mx-auto">

@@ -14,6 +14,10 @@ const LoginPage = () => {
     const navigate = useNavigate()
     const onSubmit = (data) => {
         LoginUser(data)
+    }   
+
+    const HandleAdminSubmit = () => {
+        LoginUser({email : 'mohamedelsayed20258@gmail.com',password : '01093588197Mm'})
     }
 
     if(loggedIn) {
@@ -67,6 +71,10 @@ const LoginPage = () => {
                             {LoadingLogin ? <span className="loading loading-spinner"></span> : 'login'}
                         </button>
                         <p className='mt-4'>doesn't have account? <Link className="underline text-blue-600" to="/register">register</Link></p>
+                    </div>
+                    <div>
+                        <button onClick={() => HandleAdminSubmit()} className="btn btn-accent w-full mt-4">Login as Admin</button>
+                        <p className="text-sm">option feature</p>
                     </div>
                 </form>
             </div>

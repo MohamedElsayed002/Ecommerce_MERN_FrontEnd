@@ -39,6 +39,7 @@ const Sidebar = ({ setToggled, toggled }) => {
         navigation('/')
     }
 
+
     return (
         <div className="absolute right-0 bottom-0 bg-orange-500 w-[40%] h-[100%] z-10">
             <div>
@@ -54,7 +55,17 @@ const Sidebar = ({ setToggled, toggled }) => {
             {
                 toggled && (
                     <div>
-                        <ul className="flex flex-col gap-8 text-3xl">
+                        <ul className="flex flex-col gap-6 text-3xl">
+                            {
+                                user?.data?.user?.role === 'admin' && (
+                                    <li className="hover:opacity-70">
+                                        <NavLink
+                                            to="/user/admin"
+                                            className={({ isActive }) => isActive ? 'text-white' : ''}
+                                        >Admin</NavLink>
+                                    </li>
+                                )
+                            }
                             <li className="hover:opacity-70">
                                 <NavLink
                                     to="."
