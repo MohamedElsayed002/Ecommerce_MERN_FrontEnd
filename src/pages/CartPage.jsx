@@ -2,12 +2,14 @@
 import React , {useState} from 'react'
 import axios from 'axios'
 import { Link, useLoaderData } from 'react-router-dom'
+import { toast } from 'react-toastify'
 
 export const loader = async () => {
     try {
         const data = await axios.get('/api/v1/cart')
         return data
     } catch (error) {
+        toast.error(error?.response?.data?.msg)
         return error
     }
 }

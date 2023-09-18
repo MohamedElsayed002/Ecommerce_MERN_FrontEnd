@@ -2,6 +2,7 @@
 import axios from 'axios'
 import SingleBrand from '../components/SingleBrand'
 import { useLoaderData } from 'react-router-dom'
+import { toast } from 'react-toastify'
 
 
 export const loader = async () => {
@@ -9,7 +10,7 @@ export const loader = async () => {
         const {data} = await axios.get('/api/v1/brands')
         return data
     }catch(error) {
-        console.log(error)
+        toast.error(error?.response?.data?.msg)
         return error
     }
 }

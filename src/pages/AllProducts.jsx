@@ -1,6 +1,7 @@
 import axios from "axios"
 import { useLoaderData, useLocation, useNavigate, Link , Outlet } from "react-router-dom"
 import Paginate from "../components/Paginate"
+import { toast } from "react-toastify"
 
 
 export const loader = async () => {
@@ -8,6 +9,7 @@ export const loader = async () => {
         const { data } = await axios('/api/v1/products/admin-all-products')
         return { data: data.result }
     } catch (error) {
+        toast.error(error?.response?.data?.msg)
         return error
     }
 }

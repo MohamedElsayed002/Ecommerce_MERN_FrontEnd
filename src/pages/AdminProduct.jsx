@@ -13,7 +13,7 @@ export const action = async  ({request,params}) => {
         const info = await axios.patch(`/api/v1/products/${id}` , data)
         return redirect('/user/admin/all-products')
     }catch(error) {
-        console.log(error)
+        toast.error(error?.response?.data?.msg)
         return error
     }
 }
@@ -26,7 +26,7 @@ export const loader = async ({params}) => {
         const data = await axios(`/api/v1/products/${id}`)
         return {data :data.data.result}
     }catch(error){
-        console.log(error)
+        toast.error(error?.response?.data?.msg)
         return error
     }
 }

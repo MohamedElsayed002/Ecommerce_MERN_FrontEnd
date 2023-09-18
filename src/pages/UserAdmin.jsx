@@ -1,5 +1,6 @@
 import axios from "axios"
 import { Form ,  useLoaderData , redirect , useNavigate } from "react-router-dom"
+import { toast } from "react-toastify"
 
 
 export const action = async ({request,params}) => {
@@ -11,7 +12,7 @@ export const action = async ({request,params}) => {
         console.log(info)
         return redirect('/user/admin')
     }catch(error) {
-        console.log(error)
+        toast.error(error?.response?.data?.msg)
         return error
     }
 }
@@ -22,7 +23,7 @@ export const loader = async ({params}) => {
         let {data} = await axios(`/api/v1/users/${id}`)
         return {data : data.data}
     }catch(error) {
-        console.log(error)
+        toast.error(error?.response?.data?.msg)
         return error
     }
 }
@@ -43,6 +44,7 @@ const UserAdmin = () => {
             navigation('/user/admin')
             toast.success('product deleted successfully')
         }catch(error) {
+            toast.error(error?.response?.data?.msg)
             console.log(error)
         }
     }

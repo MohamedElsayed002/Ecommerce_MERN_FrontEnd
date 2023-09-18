@@ -1,5 +1,6 @@
 import axios from "axios"
 import { Link, useLoaderData } from "react-router-dom"
+import { toast } from "react-toastify"
 
 
 
@@ -8,6 +9,7 @@ export const loader = async () => {
         let data = await axios('/api/v1/users')
         return { data: data.data.data }
     } catch (error) {
+        toast.error(error?.response?.data?.msg)
         return error
     }
 }

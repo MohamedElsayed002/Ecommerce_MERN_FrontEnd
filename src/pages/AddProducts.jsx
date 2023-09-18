@@ -18,7 +18,7 @@ export const action = async ({ request }) => {
         toast.success('product added')
         return info
     } catch (error) {
-        console.log(error)
+        toast.error(error?.response?.data?.msg)
         return error
     }
 }
