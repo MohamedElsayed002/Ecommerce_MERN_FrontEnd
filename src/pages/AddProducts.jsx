@@ -46,7 +46,7 @@ const AddProducts = () => {
                         <input required type="number" id="price" name="price" className=" input input-bordered" placeholder="product price" />
                     </div>
                     <div className="flex flex-col w-1/3">
-                        <label className="label" htmlFor='quantity'>Quantity</label>
+                        <label className="label" htmlFor='quantity'>Quantityy</label>
                         <input required type="number" id="quantity" name="quantity" className=" input input-bordered" placeholder="product quantity" />
                     </div>
                     <div className="flex flex-col w-1/3">
